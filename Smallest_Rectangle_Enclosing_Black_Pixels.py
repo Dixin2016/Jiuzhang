@@ -7,6 +7,8 @@ return the area of the smallest (axis-aligned) rectangle that encloses all black
 
 https://discuss.leetcode.com/topic/29086/clear-binary-search-python
 https://www.jiuzhang.com/solutions/smallest-rectangle-enclosing-black-pixels
+
+Binary search
 """
 class Solution(object):
     # @param image {List[List[str]]}  a binary matrix with '0' and '1'
