@@ -17,14 +17,14 @@ class Solution(object):
         n, m = len(image), len(image[0])
         if m == 0 or n == 0 or not image:
             return False
-        
+
         left = self.findLeft(image, 0, y)
         right = self.findRight(image, y, m - 1)
         top = self.findTop(image, 0, x)
         bottom = self.findBottom(image, x, n - 1)
-        
+
         return (right - left + 1) * (bottom - top + 1)
-    
+
     def findLeft(self, image, start, end):
         while start + 1 < end:
             mid = start + (end - start) // 2
@@ -35,7 +35,7 @@ class Solution(object):
         if self.isEmptyCol(image, start):
             return end
         return start
-              
+
     def findRight(self, image, start, end):
         while start + 1 < end:
             mid = start + (end - start) // 2
@@ -46,7 +46,7 @@ class Solution(object):
         if self.isEmptyCol(image, end):
             return start
         return end
-      
+
     def findTop(self, image, start, end):
         while start + 1 < end:
             mid = start + (end - start) // 2
@@ -57,7 +57,7 @@ class Solution(object):
         if self.isEmptyRow(image, start):
             return end
         return start
-      
+
     def findBottom(self, image, start, end):
         while start + 1 < end:
             mid = start + (end - start) // 2
@@ -68,16 +68,16 @@ class Solution(object):
         if self.isEmptyRow(image, end):
             return start
         return end
-      
+
     def isEmptyCol(self, image, col):
-        for i in xrange(n):
-            if image[i][col] == 1:  #if image[i][col] == '1':
+        for i in range(len(image)):
+            if image[i][col] == '1':
                 return False
         return True
-      
+
     def isEmptyRow(self, image, row):
-        for i in xrange(m):
-            if image[row][i] == 1:
+        for i in range(len(image[0])):
+            if image[row][i] == '1':
                 return False
         return True
       
