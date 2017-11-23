@@ -15,12 +15,12 @@ Binary Search
 """
 
 class Solution(object):
-    def totalOccurrence(self, nums, target):
+        def totalOccurrence(self, nums, target):
         if not nums or len(nums) == 0:
             return False
         if target < nums[0] or target > nums[-1]:
             return 0
-        
+
         # The first occurrance of target
         start, end = 0, len(nums) - 1
         while start + 1 < end:
@@ -35,7 +35,7 @@ class Solution(object):
             left = end
         else:
             return 0
-        
+
         # The last occurrance of target
         start, end = 0, len(nums) - 1
         while start + 1 < end:
@@ -46,7 +46,7 @@ class Solution(object):
                 end = mid
         if nums[end] == target:
             right = end
-        if nums[start] == target:
+        elif nums[start] == target:
             right = start
-        
+
         return right - left + 1
